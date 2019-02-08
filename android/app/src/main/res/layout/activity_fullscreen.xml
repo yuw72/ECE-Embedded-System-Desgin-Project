@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context=".FullscreenActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <!--TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="#33b5e5"
+        android:textSize="50sp"
+        android:textStyle="bold" />-->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+        </WebView>
+
+        <io.github.controlwear.virtual.joystick.android.JoystickView
+            android:id="@+id/joystick_view"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/power_off"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rightright_btn"
+            android:text="@string/power_off"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/leftleft_btn"
+            android:text="@string/reset_button"
+            android:textColor="@color/white"
+            app:layout_constraintBaseline_toBaselineOf="@+id/power_off"
+            app:layout_constraintEnd_toStartOf="@+id/power_off" />
+
+        <Button
+            android:id="@+id/cam_up"
+            android:layout_width="201dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/top_button"
+            android:text="@string/headup_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/stop_button"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/cam_down"
+            android:layout_width="201dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/mid_button"
+            android:text="@string/headdown_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/clamp_release"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/cam_left"
+            android:layout_width="64.5dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/mid_button"
+            android:text="@string/lookleft_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cam_down"
+            app:layout_constraintEnd_toStartOf="@+id/stop_button" />
+
+        <Button
+            android:id="@+id/cam_right"
+            android:layout_width="64.5dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/mid_button"
+            android:text="@string/lookright_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cam_down"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:text="@string/stop_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/cam_down"
+            app:layout_constraintEnd_toStartOf="@+id/cam_right" />
+
+        <Button
+            android:id="@+id/clamp_release"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bot_r_button"
+            android:text="@string/release_button"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/clamp_grab"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="1dp"
+            android:background="@drawable/bot_l_button"
+            android:text="@string/grab_button"
+            android:textColor="@color/white"
+            app:layout_constraintBaseline_toBaselineOf="@+id/clamp_release"
+            app:layout_constraintEnd_toStartOf="@+id/clamp_release" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+
+</FrameLayout>

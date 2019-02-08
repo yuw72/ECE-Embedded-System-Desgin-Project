@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">JoyGrabber</string>
+
+    <string name="stop_button">Stop</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="switch_button">Gravity Mode</string>
+    <string name="headup_button">Cam Up</string>
+    <string name="headdown_button">Cam Down</string>
+    <string name="lookleft_button">Cam Left</string>
+    <string name="lookright_button">Cam Right</string>
+    <string name="ip_address_hint">IP Address</string>
+    <string name="ip_address_default">http://10.3.141.1</string>
+    <string name="hint">hint</string>
+    <string name="release_button">Release</string>
+    <string name="grab_button">Grab</string>
+    <string name="reset_button">Cam Reset</string>
+    <string name="power_off">Power off</string>
+</resources>
