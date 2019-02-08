@@ -1,0 +1,15 @@
+[Unit]
+Description=Joy Grabber Python Server Service
+After=network-online.target joygrabber-pistreaming.service hostapd.service
+Requires=joygrabber-pistreaming.service
+
+[Service]
+Type=simple
+User=pi
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/python3 /home/pi/src/joygrabber/pi-server/mainserver.py
+ExecStartPost=/bin/sh -c "sleep 5; /usr/bin/python3 /home/pi/src/joygrabber/pi-server/reset.py"
+
+[Install]
+WantedBy=multi-user.target
+Alias=piserver.service

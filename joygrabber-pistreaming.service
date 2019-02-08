@@ -1,0 +1,12 @@
+[Unit]
+Description=Joy Grabber Video streaming Service
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/src/joygrabber/pistreaming/server.py
+WorkingDirectory=/home/pi/src/joygrabber/pistreaming
+
+[Install]
+WantedBy=multi-user.target
